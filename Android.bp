@@ -8,6 +8,13 @@ rust_library_host_rlib {
     features: [
         "alloc",
         "default",
+        "once_cell",
         "std",
     ],
+    rlibs: [
+        "libonce_cell",
+    ],
 }
+
+// dependent_library ["feature_list"]
+//   once_cell-1.3.1 "std"
