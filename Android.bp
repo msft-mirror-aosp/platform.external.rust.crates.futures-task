@@ -46,4 +46,4 @@ rust_library {
 }
 
 // dependent_library ["feature_list"]
-//   once_cell-1.4.0 "std"
+//   once_cell-1.4.1 "std"
