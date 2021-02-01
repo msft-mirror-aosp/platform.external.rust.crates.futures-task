@@ -1,0 +1,15 @@
+diff --git a/Android.bp b/Android.bp
+index 76ef162..18bac85 100644
+--- a/Android.bp
++++ b/Android.bp
+@@ -43,6 +43,10 @@ rust_library {
+     rustlibs: [
+         "libonce_cell",
+     ],
++    apex_available: [
++        "//apex_available:platform",
++        "com.android.virt",
++    ],
+ }
+ 
+ // dependent_library ["feature_list"]
