@@ -38,7 +38,7 @@ license {
 }
 
 rust_defaults {
-    name: "futures-task_defaults",
+    name: "futures-task_test_defaults",
     crate_name: "futures_task",
     srcs: ["src/lib.rs"],
     test_suites: ["general-tests"],
@@ -53,7 +53,7 @@ rust_defaults {
 
 rust_test_host {
     name: "futures-task_host_test_src_lib",
-    defaults: ["futures-task_defaults"],
+    defaults: ["futures-task_test_defaults"],
     test_options: {
         unit_test: true,
     },
@@ -61,7 +61,7 @@ rust_test_host {
 
 rust_test {
     name: "futures-task_device_test_src_lib",
-    defaults: ["futures-task_defaults"],
+    defaults: ["futures-task_test_defaults"],
 }
 
 rust_library {
