@@ -41,6 +41,8 @@ rust_defaults {
     name: "futures-task_test_defaults",
     crate_name: "futures_task",
     srcs: ["src/lib.rs"],
+    cargo_env_compat: true,
+    cargo_pkg_version: "0.3.17",
     test_suites: ["general-tests"],
     auto_gen_config: true,
     edition: "2018",
@@ -68,6 +70,8 @@ rust_library {
     name: "libfutures_task",
     host_supported: true,
     crate_name: "futures_task",
+    cargo_env_compat: true,
+    cargo_pkg_version: "0.3.17",
     srcs: ["src/lib.rs"],
     edition: "2018",
     features: [
