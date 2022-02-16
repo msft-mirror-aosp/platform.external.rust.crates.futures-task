@@ -1,7 +1,7 @@
 use super::arc_wake::ArcWake;
-use alloc::sync::Arc;
 use core::mem;
-use core::task::{RawWaker, RawWakerVTable, Waker};
+use core::task::{Waker, RawWaker, RawWakerVTable};
+use alloc::sync::Arc;
 
 pub(super) fn waker_vtable<W: ArcWake>() -> &'static RawWakerVTable {
     &RawWakerVTable::new(
@@ -22,7 +22,9 @@ where
 {
     let ptr = Arc::into_raw(wake) as *const ();
 
-    unsafe { Waker::from_raw(RawWaker::new(ptr, waker_vtable::<W>())) }
+    unsafe {
+        Waker::from_raw(RawWaker::new(ptr, waker_vtable::<W>()))
+    }
 }
 
 // FIXME: panics on Arc::clone / refcount changes could wreak havoc on the
